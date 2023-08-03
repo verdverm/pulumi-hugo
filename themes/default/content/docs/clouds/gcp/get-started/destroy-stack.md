@@ -25,36 +25,40 @@ $ pulumi destroy
 You'll be prompted to make sure you really want to delete these resources. This can take a minute or two; Pulumi waits until all resources are shut down and deleted before it considers the destroy operation complete.
 
 ```
-Previewing destroy (dev):
+Previewing destroy (dev)
 
- -   pulumi:pulumi:Stack              quickstart-dev         delete
- -   ├─ gcp:storage:BucketIAMBinding  my-bucket-IAMBinding   delete
- -   ├─ gcp:storage:BucketObject      index.html             delete
- -   └─ gcp:storage:Bucket            my-bucket              delete
+View in Browser (Ctrl+O): https://app.pulumi.com/christian-pulumi-corp/quickstart/dev/previews/0f0d731c-6fca-48e7-871d-4a83fb6a814b
+
+     Type                             Name               Plan
+ -   pulumi:pulumi:Stack              quickstart-dev     delete
+ -   ├─ gcp:storage:BucketIAMBinding  my-bucket-binding  delete
+ -   ├─ gcp:storage:BucketObject      index.html         delete
+ -   └─ gcp:storage:Bucket            my-bucket          delete
 
 Outputs:
-  - bucketEndpoint: "http://storage.googleapis.com/my-bucket-0167228/index.html-50b2ce9"
-  - bucketName    : "gs://my-bucket-0167228"
+  - bucketEndpoint: "http://storage.googleapis.com/my-bucket-daa12be/index.html-a52debd"
+  - bucketName    : "gs://my-bucket-daa12be"
 
 Resources:
     - 4 to delete
 
 Do you want to perform this destroy? yes
-Destroying (dev):
+Destroying (dev)
 
- -   pulumi:pulumi:Stack              quickstart-dev         deleted
- -   ├─ gcp:storage:BucketIAMBinding  my-bucket-IAMBinding   deleted
- -   ├─ gcp:storage:BucketObject      index.html             deleted
- -   └─ gcp:storage:Bucket            my-bucket              deleted
+     Type                             Name               Status
+ -   pulumi:pulumi:Stack              quickstart-dev     deleted
+ -   ├─ gcp:storage:BucketIAMBinding  my-bucket-binding  deleted (6s)
+ -   ├─ gcp:storage:BucketObject      index.html         deleted (0.78s)
+ -   └─ gcp:storage:Bucket            my-bucket          deleted (1s)
 
 Outputs:
-  - bucketEndpoint: "http://storage.googleapis.com/my-bucket-0167228/index.html-50b2ce9"
-  - bucketName    : "gs://my-bucket-0167228"
+  - bucketEndpoint: "http://storage.googleapis.com/my-bucket-daa12be/index.html-a52debd"
+  - bucketName    : "gs://my-bucket-daa12be"
 
 Resources:
     - 4 deleted
 
-Duration: 7s
+Duration: 9s
 ```
 
 > To delete the stack itself, run [`pulumi stack rm`](/docs/cli/commands/pulumi_stack_rm).
